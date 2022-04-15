@@ -40,12 +40,26 @@ Getting Started
     print(Goodreads.get_popular_quotes_as_json())
     print(Goodreads.get_daily_quote())
     print(Goodreads.get_daily_quote_json())
+    
+Example
+-------------
+
+from goodreads_quotes import Goodreads
+from random import randint
+qtxt = Goodreads.get_daily_quote()
+
+# print(txt)
+ubnd = len(qtxt)
+i = randint(0, ubnd-1)
+quote = qtxt[i]['quote']
+author = qtxt[i]['author']
+print(quote + '\n' +  author.strip(','))
 
 Features
 --------
 
-- Popular quotes
-- Daily quote
+- Popular quote: pulls from popular quote page
+- Daily quote: pulls from recent quote page
 
 Contribution
 ------------
