@@ -49,13 +49,13 @@ Example
     from goodreads_quotes import Goodreads
     from random import randint
 
-    qtxt = Goodreads.get_daily_quote()
+    qtxt = Goodreads.get_daily_quote() ## dict stored in list var
 
-    ubnd = len(qtxt)
-    i = randint(0, ubnd-1)
-    quote = qtxt[i]['quote']
-    author = qtxt[i]['author']
-    print(quote + '\n' +  author.strip(','))
+    ubnd = len(qtxt) ## get upper bound of list
+    i = randint(0, ubnd-1) ## create var to hold random number based on ubound of list
+    quote = qtxt[i]['quote'] ## access quote text var
+    author = qtxt[i]['author'] ## access author text var
+    print(quote + '\n' +  author.strip(',')) ## example of clean quote w/ author on next line
 
 Features
 --------
