@@ -44,16 +44,18 @@ Getting Started
 Example
 -------------
 
-from goodreads_quotes import Goodreads
-from random import randint
-qtxt = Goodreads.get_daily_quote()
+.. code:: python
 
-# print(txt)
-ubnd = len(qtxt)
-i = randint(0, ubnd-1)
-quote = qtxt[i]['quote']
-author = qtxt[i]['author']
-print(quote + '\n' +  author.strip(','))
+    from goodreads_quotes import Goodreads
+    from random import randint
+
+    qtxt = Goodreads.get_daily_quote()
+
+    ubnd = len(qtxt)
+    i = randint(0, ubnd-1)
+    quote = qtxt[i]['quote']
+    author = qtxt[i]['author']
+    print(quote + '\n' +  author.strip(','))
 
 Features
 --------
