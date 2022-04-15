@@ -41,7 +41,7 @@ class GoodreadsException(Exception):
 class Goodreads:
 
     @staticmethod
-    def get_daily_quotes():
+    def get_daily_quote():
         from random import randint
         i = randint(1,100)
         try:
@@ -97,8 +97,8 @@ class Goodreads:
         return quotes
 
     @staticmethod
-    def get_daily_quotes_as_json():
-        return json.dumps(Goodreads.get_daily_quotes())
+    def get_daily_quote_as_json():
+        return json.dumps(Goodreads.get_daily_quote())
 
     @staticmethod
     def get_popular_quotes_as_json():
