@@ -41,7 +41,7 @@ class GoodreadsException(Exception):
 class Goodreads:
 
     @staticmethod
-    def get_recent_quotes():
+    def get_daily_quotes():
         from random import randint
         i = randint(1,100)
         try:
@@ -56,10 +56,8 @@ class Goodreads:
         quotes = []
         for quote_div in tree.xpath('//div[@class="quoteText"]'):
             quote_text = quote_div.xpath('text()')[0].strip().replace('“', '').replace('”', '')
-            # author = quote_div.xpath('a/text()')[0].strip()
         for quote_div in tree.xpath('//span[@class="authorOrTitle"]'):
             author = quote_div.xpath('text()')[0].strip().replace('“', '').replace('”', '')
-            # author = quote_div.xpath('a/text()')[0].strip()
               
             quote = {
                 'quote': quote_text,
@@ -86,10 +84,8 @@ class Goodreads:
         quotes = []
         for quote_div in tree.xpath('//div[@class="quoteText"]'):
             quote_text = quote_div.xpath('text()')[0].strip().replace('“', '').replace('”', '')
-            # author = quote_div.xpath('a/text()')[0].strip()
         for quote_div in tree.xpath('//span[@class="authorOrTitle"]'):
             author = quote_div.xpath('text()')[0].strip().replace('“', '').replace('”', '')
-            # author = quote_div.xpath('a/text()')[0].strip()
               
             quote = {
                 'quote': quote_text,
@@ -101,8 +97,8 @@ class Goodreads:
         return quotes
 
     @staticmethod
-    def get_daily_quote_as_json():
-        return json.dumps(Goodreads.get_recent_quote())
+    def get_daily_quotes_as_json():
+        return json.dumps(Goodreads.get_daily_quotes())
 
     @staticmethod
     def get_popular_quotes_as_json():
